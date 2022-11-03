@@ -1,5 +1,15 @@
 type Query {
-    Authors: [Author]
+    authors: [Author]
+    authorById(id: ID!): Author
+}
+
+type Mutation {
+    addAuthor(author: AuthorInput): Author
+}
+
+input AuthorInput {
+    id: ID!
+    name: String
 }
 
 type Author {
